@@ -4,7 +4,15 @@ const Problem = require('./models/problem');
 const db = require('./config/mongoose');
 
 const app = express();
-app.use(cors());
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", '*'); // or '*' for any origin
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+  
 app.use(express.json());
 
 app.get('/', (req, res) => res.send('Server is running!'));
