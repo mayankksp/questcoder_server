@@ -69,6 +69,7 @@ exports.getAllProblems = async (req, res) => {
 
         problemScores.sort((a, b) => b.score - a.score);
         problems = problemScores.map(ps => ps.problem);
+        console.log(problems);
         res.status(200).json({ problems });
     } catch (error) {
         console.error(`Error getting all problems: ${error}`);
