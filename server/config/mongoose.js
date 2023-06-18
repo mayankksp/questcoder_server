@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // const MONGODB_URI = 'mongodb://localhost:27017/ProblemsDatabase';
-const MONGODB_URI = 'mongodb+srv://mayankksp:Rnw%4008564@cluster0.lmp4ptj.mongodb.net/ProblemsDatabase?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ProblemsDatabase';
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
