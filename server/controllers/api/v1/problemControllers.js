@@ -33,6 +33,7 @@ function tfidf(term, document, documents, idf) {
 
 exports.getAllProblems = async (req, res) => {
     console.log('Getting all problems');
+    console.log(req.query.searchTerm);
     try {
         const searchTerm = req.query.searchTerm;
         const source = req.query.source;
